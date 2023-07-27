@@ -1,0 +1,41 @@
+:root {
+  /* Colors (FIXED) */
+  --primary: #eb5e28;
+  --gunmetal-grey: #465362;
+  --black: #051923;
+  --gray: #33415c;
+  --beige: #979dac;
+  --quotes: #3da5d9;
+
+  /* Colors (THEME-DEPENDANT */
+  --text-color: white;
+  --light-icon: white;
+  --gray-light: #bdbdbd;
+  --anchor-color: var(--primary);
+
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--black);
+}
+
+
+html {
+  /* background-color: var(--gunmetal-grey);  */
+  color: var(--text-color);           /* or use --black */
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+input, textarea, button, select {
+  font-family: 'Fira Code', monospace;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
