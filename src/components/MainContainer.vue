@@ -3,7 +3,7 @@
 
     <!-- Config -->
     <!-- Results and Game Container -->
-    <GameConfig />
+    <!-- <GameConfig /> -->
     <RouterView></RouterView>
 
   </main>
@@ -11,18 +11,18 @@
 
 <script>
 
-import GameConfig from '../components/math-facts-practice/GameConfig.vue';
+// import GameConfig from '../components/math-facts-practice/GameConfig.vue';
 
 export default {
   name: 'MainContainer',
   components: {
-    GameConfig
+    // GameConfig
   }
 }
 
 </script>
 
-<style scoped>
+<style>
 
 #main-container {
   margin: auto;

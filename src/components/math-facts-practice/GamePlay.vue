@@ -10,16 +10,18 @@
           <strong class="big">You Answered</strong>
           <div class="huge">{{ score }}</div>
           <strong class="big">Questions Correctly</strong>
-          <button 
-            class="btn btn-primary form-control m-1"
-            @click="restart()">
-              Play Again with Same Settings
-          </button>
-          <button 
-          class="btn btn-secondary form-control m-1"
-          @click="config()">
-            Change Settings
-          </button>
+          <div class="col">
+            <button 
+              class="btn btn-primary form-control m-1"
+              @click="restart()">
+                Play Again with Same Settings
+            </button>
+            <button 
+              class="btn btn-secondary form-control m-1"
+              @click="config()">
+                Change Settings
+            </button>
+          </div>
         </div>
       </template>
     </transition>
@@ -40,7 +42,7 @@
           <div :class="equationClass" id="equation">
             <GameEquation 
                 :question="question"
-                :answer="input"
+                :answer="+input"
                 :answered="answered"
               />
           </div>
@@ -89,7 +91,7 @@
         operands: { num1: '1', num2: '1' },
         answered: false,
         score: 0,
-        gameLength: 60,
+        gameLength: 10,
         timeLeft: 0,
       };
     },
@@ -99,7 +101,7 @@
     },
     methods: {
     config() {
-      this.$router.push('/');
+      this.$router.push('/math-facts');
     },
     // this setInput might be useful lesson 4 chptr 11
     setInput(value) {

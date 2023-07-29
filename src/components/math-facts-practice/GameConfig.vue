@@ -47,9 +47,13 @@ export default {
   },
   methods: {
     play() {
-      this.$router.push(
-        '/play/' + encodeURIComponent(this.operation) + '/' + this.maxNumber
-      );
+      this.$router.push({
+        name: 'GamePlay',
+        query: {
+          operation: this.operation,
+          maxNumber: this.maxNumber,
+        },
+      });
     },
   },
   computed: {

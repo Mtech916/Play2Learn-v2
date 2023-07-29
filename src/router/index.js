@@ -15,7 +15,22 @@ const routes = [
     {
       path: '/math-facts',
       name: 'MathFactsView',
-      component: MathFactsView
+      component: MathFactsView,
+      children: [
+        {
+          path: '',
+          component: GameConfig,
+        },
+        {
+          path: 'play',
+          name: 'GamePlay',
+          component: GamePlay,
+          props: (route) => ({ 
+            operation: route.query.operation, 
+            maxNumber: route.query.maxNumber 
+          }),
+        },
+      ],
     },
     {
       path: '/about',
@@ -26,15 +41,6 @@ const routes = [
       path: '/game-config',
       name: 'GameConfig',
       component: GameConfig
-    },
-    {
-      path: '/play',
-      name: 'GamePlay',
-      component: GamePlay,
-      props: {
-        operation: true,
-        maxNumber: true
-      }
     },
     {
       path: '/anagram-hunt',

@@ -12,7 +12,7 @@ export default {
   name: 'GameEquation',
   props: {
     question: String,
-    answer: String,
+    answer: Number,
     answered: Boolean
   }
 }
