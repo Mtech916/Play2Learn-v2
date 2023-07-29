@@ -9,27 +9,23 @@
       <p class="text-center fs-1">{{ currentWord }} ({{ currentAnagrams.length }} left)</p>
       <label for="anagram-input" class="visually-hidden">Type Here:</label>
       <input 
-      v-model="userInput"
-      @keyup.enter="checkAnswer"
-      type="text" 
-      id="anagram-input"
-      class="col-2 p-2"
-      name="anagram-input"
-      placeholder="type here"
+        v-model="userInput"
+        @keyup.enter="checkAnswer"
+        type="text" 
+        id="anagram-input"
+        class="col-2 p-2"
+        name="anagram-input"
+        placeholder="type here"
       >
-      
       <div class="row justify-content-center">
         <ol class="col col-3 list list-numbered mt-3">
           <li
-            v-for="anagram in currentAnagrams"
+            v-for="anagram in guessedAnagrams"
             :key="anagram"
             class="list-item"
           >
             {{ anagram }}
           </li>
-          <!-- <li class="list-item">bread</li>
-          <li class="list-item">read</li>
-          <li class="list-item">red</li> -->
         </ol>
       </div>
       
@@ -50,6 +46,7 @@ import anagrams from '@/data/anagrams.js';
       return {
         currentWord: '',
         currentAnagrams: [],
+        guessedAnagrams: [],
         userInput: '',
         score: 0,
         timeLeft: 60,
@@ -71,18 +68,23 @@ import anagrams from '@/data/anagrams.js';
           this.timeLeft--;
         } else {
           clearInterval(this.timer);
-          this.$emit('end-game');
+          this.endGame();
         }
+      },
+      getRandomWordFromArray(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
       },
       nextWord() {
         if (this.currentAnagrams.length === 0) {
-          this.endGame();
-          return;
+          this.fetchNewAnagrams();
         }
+        const randomIndex = Math.floor(Math.random() * this.currentAnagrams.length);
+        this.currentWord = this.currentAnagrams[randomIndex][0];
+        this.currentAnagrams = this.currentAnagrams[randomIndex].slice(1);
+      },
+      fetchNewAnagrams() {
         const words = anagrams[this.wordLength];
-        const randomArray = words[Math.floor(Math.random() * words.length)];
-        this.currentWord = randomArray[0];
-        this.currentAnagrams = randomArray.slice(1);
+        this.currentAnagrams = [...words];
       },
       checkAnswer() {
         const lowerCaseInput = this.userInput.toLowerCase().trim();
@@ -90,6 +92,7 @@ import anagrams from '@/data/anagrams.js';
         if (this.currentAnagrams.includes(lowerCaseInput)) {
           this.score++;
           this.currentAnagrams = this.currentAnagrams.filter(anagram => anagram !== lowerCaseInput);
+          this.guessedAnagrams.push(lowerCaseInput);
           this.userInput = '';
           if (this.currentAnagrams.length === 0) {
             this.nextWord();
