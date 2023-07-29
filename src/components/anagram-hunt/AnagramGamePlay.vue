@@ -91,6 +91,7 @@ import anagrams from '@/data/anagrams.js';
 
         if (this.currentAnagrams.includes(lowerCaseInput)) {
           this.score++;
+          this.$emit('update-score', this.score);
           this.currentAnagrams = this.currentAnagrams.filter(anagram => anagram !== lowerCaseInput);
           this.guessedAnagrams.push(lowerCaseInput);
           this.userInput = '';

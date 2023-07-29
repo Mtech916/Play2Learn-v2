@@ -2,7 +2,7 @@
   <h1 id="game-heading" class="row justify-content-center pt-3 pb-2">Anagram Hunt</h1>
   
   <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
-  <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" />
+  <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" @update-score="updateScore"/>
   <AnagramGameOver v-else :score="score" @restart-game="restartGame" @back-to-config="backToConfig" />
 
 </template>
@@ -34,6 +34,9 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
       startGame(wordLength) {
         this.wordLength = wordLength;
         this.gameStarted = true;
+      },
+      updateScore(newScore) {
+        this.score = newScore;
       },
       onEndGame() {
       this.gameOver = true;
