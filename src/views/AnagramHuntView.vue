@@ -42,13 +42,15 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
       this.gameOver = true;
       },
       restartGame() {
+        this.score = 0;
+        this.gameStarted = true;
+        this.gameOver = false;
+      },
+      backToConfig() {
         this.wordLength = null;
         this.score = 0;
         this.gameStarted = false;
         this.gameOver = false;
-      },
-      backToConfig() {
-        this.restartGame();
       },
     }
   }
