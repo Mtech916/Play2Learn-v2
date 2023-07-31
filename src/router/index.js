@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import LoginRegisterView from '../views/LoginRegisterView.vue';
+import LoginForm from '../components/login-register-forms/LoginForm.vue';
+import RegisterForm from '../components/login-register-forms/RegistrationForm.vue';
 import AboutView from '../views/AboutView.vue';
 import MathFactsView from '../views/MathFactsView.vue';
 import AnagramHuntView from '../views/AnagramHuntView.vue';
@@ -11,6 +14,21 @@ const routes = [
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/login',
+      name: 'LoginRegisterView',
+      component: LoginRegisterView,
+      children: [
+        {
+          path: 'login',
+          component: LoginForm,
+        },
+        {
+          path: 'register',
+          component: RegisterForm,
+        },
+      ],
     },
     {
       path: '/math-facts',

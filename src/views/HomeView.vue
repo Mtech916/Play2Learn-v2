@@ -47,8 +47,7 @@
 
 <style scoped>
 #home-view {
-  /* height: 100vh; */
-  /* margin-bottom: 70px; */
+  /* padding-bottom: 100px; */
 }
 
 .btn--line {
@@ -69,7 +68,7 @@
 
 @media (min-width: 761px) {
   #home-view {
-    height: 100vh;
+    /* height: 100vh; */
   }
 }
 

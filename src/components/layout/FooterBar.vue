@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="d-flex align-items-center">
         <img src="../../assets/logo.svg" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
-        <a href="https://www.webucator.com" class="text-light nav-link">
+        <a href="https://www.webucator.com" class="d-none d-sm-block text-light nav-link">
           Copyright &copy; {{new Date().getFullYear()}} Play2Learn
         </a>
       </div>  

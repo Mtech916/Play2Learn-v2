@@ -33,7 +33,8 @@
                     <router-link class="nav-link btn--nav" to="/about">About</router-link>
                 </li>
                 <li class="nav-item m-1">
-                    <a class="btn btn--raised" href="/">Login</a>
+                    <!-- <a class="btn btn--raised" href="/">Login</a> -->
+                    <router-link class="btn btn--raised" to="/login">Login</router-link>
                 </li>
             </ul>
         </div>
@@ -53,7 +54,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-header {
+/* header,
+footer {
   background-color: var(--gunmetal-grey);
 }
 
@@ -75,6 +77,6 @@ header {
     border: 1px solid var(--primary);
     box-shadow: inset 0 2px 1px 0 var(--primary);
   }
-}
+} */
 
 </style>
