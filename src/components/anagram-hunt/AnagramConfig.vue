@@ -15,7 +15,7 @@
           placeholder="ex. 5"
         >
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center pt-3">
         <div class="col col-sm-4 col-md-4">
           <ol class="list list-numbered">
             <li class="list-item">Choose Word Length.</li>
@@ -25,10 +25,10 @@
         </div>
         <div class="row g-1 align-items-center justify-content-center">
           <button 
-            class="col-sm-6 col-md-6 btn btn-primary"
+            class="col-sm-6 col-md-6 btn btn--raised rounded-3"
             @click='play'
           >
-            Play
+            Play!
           </button>
         </div>
       </div>

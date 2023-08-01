@@ -1,18 +1,26 @@
 <template>
-  <div>
-    <MainContainer />
+  <main id="main-container">
+
+    <h1 id="game-heading" class="row-5 justify-content-center text-center py-5">Math Practice</h1>
+
     <router-view></router-view>
-  </div>
+
+</main>
 </template>
 
 <script>
 
-import MainContainer from '../components/MainContainer.vue';
-
 export default {
   name: 'MathFactsView',
-  components: {
-    MainContainer,
-  }
 }
 </script>
+
+<style scoped>
+
+#main-container {
+  margin: auto;
+  width: 380px;
+}
+
+
+</style>

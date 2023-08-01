@@ -1,5 +1,5 @@
 <template>
-  <h1 id="game-heading" class="row justify-content-center pt-3 pb-2">Anagram Hunt</h1>
+  <h1 id="game-heading" class="row justify-content-center py-5">Anagram Hunt</h1>
   
   <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
   <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" @update-score="updateScore"/>

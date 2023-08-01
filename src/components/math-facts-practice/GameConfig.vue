@@ -1,7 +1,6 @@
 <template>
 
   <div id="config-container">
-    <h1>Play2Learn</h1>
     <SelectInput 
         :currentValue="operation" 
         label="Operation" id="operation"  
@@ -17,6 +16,15 @@
         :options="numbers" 
         @input="(n) => (this.maxNumber = n)"
       />
+      <div class="row justify-content-center pt-3">
+        <div>
+          <ol class="list list-numbered">
+            <li class="list-item">Select an Opation</li>
+            <li class="list-item">Press <span class="fw-bold">Play!</span></li>
+            <li class="list-item">How many problems can you solve in 30 seconds?</li>
+          </ol>
+        </div>
+      </div>
     <PlayButton @play-button-click="play"/>
   </div>
 
