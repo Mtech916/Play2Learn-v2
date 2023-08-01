@@ -16,8 +16,8 @@
         >
       </div>
       <div class="row justify-content-center pt-3">
-        <div class="col col-sm-4 col-md-4">
-          <ol class="list list-numbered">
+        <div class="col col-sm-6 col-md-6">
+          <ol class="list list-numbered fs-5">
             <li class="list-item">Choose Word Length.</li>
             <li class="list-item">Press <span class="fw-bold">Play!</span></li>
             <li class="list-item">How many anagrams can you find in a minute?</li>
@@ -25,7 +25,7 @@
         </div>
         <div class="row g-1 align-items-center justify-content-center">
           <button 
-            class="col-sm-6 col-md-6 btn btn--raised rounded-3"
+            class="col-sm-6 col-md-6 btn btn--raised btn-outline-light rounded-3 fs-5"
             @click='play'
           >
             Play!

@@ -45,7 +45,8 @@
                   </div>
                 </div>
 
-                <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                <p id="hide" class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                <div id="login-success"></div>
 
                 <button 
                   class="btn btn-outline-light btn-lg btn--raised rounded-3" 
@@ -112,10 +113,22 @@
         this.v$.$touch();
         if (!this.v$.$invalid) {
         console.log('Form submitted!');
+        this.loginSuccess();
         setTimeout(() => {
           this.$router.push({ name: 'AnagramHuntView'});
-        }, 1500);  
+        }, 2000);  
       }
+      },
+      loginSuccess() {
+        const loginSuccess = document.getElementById('login-success');
+        const hide = document.querySelector('#hide');
+        hide.style.display = 'none';
+        loginSuccess.innerHTML = `
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> You are logged in.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        `;
       },
       onRegisterLinkClicked() {
         this.$emit('showRegistrationForm');

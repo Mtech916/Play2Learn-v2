@@ -7,10 +7,10 @@
 
     <div class="row g-1 align-items-center justify-content-center">
       <button 
-        class="col-sm-6 col-md-6 btn btn-primary"
+        class="col-sm-6 col-md-6 btn btn--raised btn-outline-light"
         @click="restartGame"
       >
-        Play Again
+        Play Again with Same Settings
       </button>
     </div>
     <div class="row g-1 align-items-center justify-content-center">
@@ -47,7 +47,7 @@
 #anagram-final-results {
   font-size: 1.6em;
   margin: auto;
-  width: 90%;
+  width: 60%;
 }
 
 .times-up {

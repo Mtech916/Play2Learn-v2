@@ -12,12 +12,12 @@
           <strong class="big">Questions Correctly</strong>
           <div class="col">
             <button 
-              class="btn btn-primary form-control m-1"
+              class="btn btn--raised btn-outline-light rounded-3 form-control m-1"
               @click="restart()">
                 Play Again with Same Settings
             </button>
             <button 
-              class="btn btn-secondary form-control m-1"
+              class="btn btn-secondary rounded-3 form-control m-1"
               @click="config()">
                 Change Settings
             </button>
@@ -91,7 +91,7 @@
         operands: { num1: '1', num2: '1' },
         answered: false,
         score: 0,
-        gameLength: 10,
+        gameLength: 30,
         timeLeft: 0,
       };
     },
@@ -225,6 +225,7 @@
 /* button sytels */
 
   button.number-button {
+    background-color: var(--primary);
     border-radius: .25em;
     font-size: 3em;
     height: 2em;
@@ -234,6 +235,7 @@
   }
 
   #clear-button {
+    background-color: var(--primary);
     border-radius: .25em;
     font-size: 3em;
     height: 2em;

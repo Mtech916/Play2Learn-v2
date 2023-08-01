@@ -22,7 +22,6 @@
 
 
 html {
-  /* background-color: var(--gunmetal-grey);  */
   color: var(--text-color);           /* or use --black */
 }
 
@@ -30,7 +29,8 @@ body {
   font-family: 'Fira Code', monospace;
   overflow: auto;
   padding-bottom: 50px;
-  /* background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1)); */
+  background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
+  color: var(--text-color);           /* or use --black */
 }
 
 input, textarea, button, select {
@@ -38,8 +38,7 @@ input, textarea, button, select {
 }
 
 header,
-.bg--primary--color,
-footer {
+.bg--primary--color {
   background-color: var(--gunmetal-grey);
 }
 
@@ -52,6 +51,24 @@ footer {
   background-position: right 20px center;
   border-radius: 3px;
 }
+
+.btn--line {
+  background-color: var(--primary);
+  color: var(--text-color);
+  padding: 12px;
+  box-shadow: 1px 0 6px 3px var(--text-color);
+  border-radius: 3px;
+}
+
+.btn--line::after {
+  content: "";
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid var(--text-color);
+  height: 4px;
+  width: 100%;
+}
+
 
 @media (min-width: 1000px) {
   .btn--nav {

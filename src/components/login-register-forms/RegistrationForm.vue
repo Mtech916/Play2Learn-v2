@@ -85,7 +85,8 @@
                   </div>
                 </div>
   
-                <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                <p id="hide" class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                <div id="register-success"></div>
   
                 <button 
                   class="btn btn-outline-light btn-lg btn--raised rounded-3" 
@@ -162,10 +163,22 @@
         this.v$.$validate();
         if (!this.v$.$error) {
           console.log('Form submitted successfully!');
+          this.registerSuccess();
           setTimeout(() => {
             this.$router.push({ name: 'AnagramHuntView' });
-          }, 1500);
+          }, 2000);
         }
+      },
+      registerSuccess() {
+        const registerSuccess = document.getElementById('register-success');
+        const hide = document.getElementById('hide');
+        hide.style.display = 'none';
+        registerSuccess.innerHTML = `
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> You have successfully registered.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        `;
       },
       onLoginLinkClicked() {
         this.$emit('showLoginForm');

@@ -18,7 +18,7 @@
       />
       <div class="row justify-content-center pt-3">
         <div>
-          <ol class="list list-numbered">
+          <ol class="list list-numbered fs-5">
             <li class="list-item">Select an Opation</li>
             <li class="list-item">Press <span class="fw-bold">Play!</span></li>
             <li class="list-item">How many problems can you solve in 30 seconds?</li>
