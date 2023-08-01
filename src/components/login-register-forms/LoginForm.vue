@@ -1,6 +1,6 @@
 <template>
 
-  <section class="d-none gradient-custom">
+  <section class="gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -60,7 +60,13 @@
 
             <div>
               <p class="mb-0">Don't have an account? 
-                <router-link to="/login/register" class="text-white-50 fw-bold">Register</router-link>
+                <router-link 
+                  to="/login/register" 
+                  class="text-white-50 fw-bold"
+                  @click="onRegisterLinkClicked"
+                >
+                  Register
+                </router-link>
               </p>
             </div>
 
@@ -106,8 +112,13 @@
         this.v$.$touch();
         if (!this.v$.$invalid) {
         console.log('Form submitted!');
-        // Your login form submission logic here
+        setTimeout(() => {
+          this.$router.push({ name: 'AnagramHuntView'});
+        }, 1500);  
       }
+      },
+      onRegisterLinkClicked() {
+        this.$emit('showRegistrationForm');
       },
     },
   }

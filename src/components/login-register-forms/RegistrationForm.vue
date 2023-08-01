@@ -99,12 +99,18 @@
             </form>
 
             <div>
-              <p class="mb-0">Already have an account? <a href="#!" class="text-white-50 fw-bold">Login</a>
+              <p class="mb-0">Already have an account?
+                <router-link
+                  to="/login"
+                  class="text-white-50 fw-bold"
+                  @click="onLoginLinkClicked"
+                >
+                  Login
+                </router-link>
               </p>
             </div>
 
           </div>
-<!-- right here -->
         </div>
       </div>
     </div>
@@ -156,7 +162,13 @@
         this.v$.$validate();
         if (!this.v$.$error) {
           console.log('Form submitted successfully!');
+          setTimeout(() => {
+            this.$router.push({ name: 'AnagramHuntView' });
+          }, 1500);
         }
+      },
+      onLoginLinkClicked() {
+        this.$emit('showLoginForm');
       }
     }
   }
@@ -176,6 +188,12 @@
 /* background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
 
 background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
+}
+
+.error-message {
+  color: yellow;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
 }
 
 </style>

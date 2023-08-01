@@ -22,10 +22,12 @@ const routes = [
       children: [
         {
           path: 'login',
+          name: 'LoginForm',
           component: LoginForm,
         },
         {
           path: 'register',
+          name: 'RegisterForm',
           component: RegisterForm,
         },
       ],
@@ -37,6 +39,7 @@ const routes = [
       children: [
         {
           path: '',
+          name: 'GameConfig',
           component: GameConfig,
         },
         {
