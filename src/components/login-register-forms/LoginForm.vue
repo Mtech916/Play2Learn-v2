@@ -48,7 +48,7 @@
                 <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
                 <button 
-                  class="btn btn-outline-light btn-lg btn--raised" 
+                  class="btn btn-outline-light btn-lg btn--raised rounded-3" 
                   type="submit"
                   @click="onSubmit"
                 >

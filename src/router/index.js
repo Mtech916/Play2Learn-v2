@@ -4,6 +4,7 @@ import LoginRegisterView from '../views/LoginRegisterView.vue';
 import LoginForm from '../components/login-register-forms/LoginForm.vue';
 import RegisterForm from '../components/login-register-forms/RegistrationForm.vue';
 import AboutView from '../views/AboutView.vue';
+import ContactView from '../views/ContactView.vue';
 import MathFactsView from '../views/MathFactsView.vue';
 import AnagramHuntView from '../views/AnagramHuntView.vue';
 import GameConfig from '../components/math-facts-practice/GameConfig.vue';
@@ -66,6 +67,11 @@ const routes = [
       path: '/anagram-hunt',
       name: 'AnagramHuntView',
       component: AnagramHuntView
+    },
+    {
+      path: '/contact',
+      name: 'ContactView',
+      component: ContactView
     }
   ];
 
