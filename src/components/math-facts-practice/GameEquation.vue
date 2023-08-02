@@ -1,5 +1,5 @@
 <template>
-  <div id="equation" class="row">
+  <div id="equation" class="row fs-4 text-white">
     <div class="col-5">{{ question }}</div>
     <div class="col-2">=</div>
     <div class="col-5">{{ answer }}</div>
