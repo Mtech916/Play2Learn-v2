@@ -40,10 +40,11 @@ import anagrams from '@/data/anagrams.js';
   export default {
     name: 'AnagramGamePlay',
     props: {
-      wordLength: Number
+      wordLength: Number,
     },
     data() {
       return {
+        selectedAnagrams: [],
         currentWord: '',
         currentAnagrams: [],
         guessedAnagrams: [],
@@ -55,9 +56,23 @@ import anagrams from '@/data/anagrams.js';
     },
     methods: {
       startGame() {
-        this.currentAnagrams = anagrams[this.wordLength];
+        this.selectedAnagrams = anagrams[this.wordLength];
+
+        this.selectedAnagrams = this.shuffleArray(this.selectedAnagrams);
+
+        this.currentAnagrams = this.selectedAnagrams.shift();
+
+        this.currentWord = this.currentAnagrams.shift();
+
         this.timer = setInterval(this.updateTimer, 1000);
-        this.nextWord();
+      },
+      shuffleArray(arr) {
+        // Fisher-Yates (Knuth) Shuffle algorithm
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
       },
       endGame() {
         clearInterval(this.timer);
@@ -68,23 +83,17 @@ import anagrams from '@/data/anagrams.js';
           this.timeLeft--;
         } else {
           clearInterval(this.timer);
-          this.endGame();
+          this.endGame(); 
         }
-      },
-      getRandomWordFromArray(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-      },
-      nextWord() {
-        if (this.currentAnagrams.length === 0) {
-          this.fetchNewAnagrams();
-        }
-        const randomIndex = Math.floor(Math.random() * this.currentAnagrams.length);
-        this.currentWord = this.currentAnagrams[randomIndex][0];
-        this.currentAnagrams = this.currentAnagrams[randomIndex].slice(1);
       },
       fetchNewAnagrams() {
-        const words = anagrams[this.wordLength];
-        this.currentAnagrams = [...words];
+        if (this.selectedAnagrams.length === 0) {
+          this.selectedAnagrams = [];
+          this.endGame();
+        } else if (this.currentAnagrams.length === 0) {
+          this.currentAnagrams = this.selectedAnagrams.shift();
+          this.currentWord = this.currentAnagrams.shift();
+        }
       },
       checkAnswer() {
         const lowerCaseInput = this.userInput.toLowerCase().trim();
@@ -92,18 +101,25 @@ import anagrams from '@/data/anagrams.js';
         if (this.currentAnagrams.includes(lowerCaseInput)) {
           this.score++;
           this.$emit('update-score', this.score);
+
           this.currentAnagrams = this.currentAnagrams.filter(anagram => anagram !== lowerCaseInput);
+          console.log(this.currentAnagrams);
+
           this.guessedAnagrams.push(lowerCaseInput);
+          console.log(this.guessedAnagrams);
           this.userInput = '';
           if (this.currentAnagrams.length === 0) {
-            this.nextWord();
+            this.fetchNewAnagrams();
           }
         }
       },
     },
+    beforeMount() {
+      this.selectedAnagrams = [];
+    },
     mounted() {
       this.startGame();
-    }
+    },
   }
 </script>
 

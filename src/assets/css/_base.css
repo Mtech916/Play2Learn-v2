@@ -29,6 +29,9 @@ body {
   font-family: 'Fira Code', monospace;
   overflow: auto;
   padding-bottom: 50px;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
   color: var(--text-color);           /* or use --black */
 }

@@ -7,7 +7,7 @@
 
     <div class="row g-1 align-items-center justify-content-center">
       <button 
-        class="col-sm-6 col-md-6 btn btn--raised btn-outline-light"
+        class="col-sm-6 col-md-6 btn btn--raised rounded-3 btn-outline-light"
         @click="restartGame"
       >
         Play Again with Same Settings
@@ -15,7 +15,7 @@
     </div>
     <div class="row g-1 align-items-center justify-content-center">
       <button 
-        class="col-sm-6 col-md-6 btn btn-secondary"
+        class="col-sm-6 col-md-6 btn btn-secondary rounded-3"
         @click="backToConfig"
       >
         Back to Start Screen

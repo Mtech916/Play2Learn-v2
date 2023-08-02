@@ -50,32 +50,5 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 
-/* header,
-footer {
-  background-color: var(--gunmetal-grey);
-}
 
-.btn--raised {
-  background-color: var(--primary);
-  color: #000;
-  padding: 10px 48px 10px 18px;
-  background-image: url("../../assets/arrow-right.svg");
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  border-radius: 3px;
-}
-
-@media (min-width: 1000px) {
-  .btn--nav {
-    color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid var(--primary);
-    box-shadow: inset 0 2px 1px 0 var(--primary);
-  }
-} */
-
-</style>

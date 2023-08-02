@@ -1,5 +1,4 @@
 <template>
-
   <div id="config-container">
     <SelectInput 
         :currentValue="operation" 
@@ -27,7 +26,6 @@
       </div>
     <PlayButton @play-button-click="play"/>
   </div>
-
 </template>
 
 <script>

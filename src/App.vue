@@ -21,12 +21,3 @@ export default {
   }
 }
 </script>
-
-<!-- <style>
-
-footer,
-header {
-  background-color: #3f7cad;
-}
-
-</style> -->

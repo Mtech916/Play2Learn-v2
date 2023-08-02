@@ -1,4 +1,48 @@
 const anagrams = {
+  3: [
+    [
+      "ate",
+      "eat",
+      "tea"
+    ],
+    [
+      "act",
+      "cat",
+      "tac"
+    ],
+    [
+      "ant",
+      "tan",
+      "nat"
+    ],
+  ],
+  4: [
+    [
+      "eats",
+      "sate",
+      "seat",
+      "teas",
+      "east",
+      "ates",
+      "teas"
+    ],
+    [
+      "late",
+      "tale",
+      "teal"
+    ],
+    [
+      "tare",
+      "tear",
+      "rate"
+    ],
+    [
+      "tape",
+      "peat",
+      "pate",
+      "tepa"
+    ]
+  ],
   5: [
     [
       "abets",
