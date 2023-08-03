@@ -3,7 +3,7 @@
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card bg--primary--color text-white rounded-5">
+          <div class="card bg--primary--color text-white rounded-5 special--border">
             <div class="card-body p-5 text-center">
 
               <div class="mb-md-5 mt-md-2 pb-5">
@@ -138,7 +138,6 @@
 </script>
 
 <style scoped>
-
 
 .error-message {
   color: yellow;

@@ -40,9 +40,17 @@ input, textarea, button, select {
   font-family: 'Fira Code', monospace;
 }
 
-header,
 .bg--primary--color {
   background-color: var(--gunmetal-grey);
+}
+
+.special--border {
+  box-shadow: inset 0 -2px 3px 5px var(--text-color);
+}
+
+.bg--quotes {
+  background-color: rgba(70, 83, 98, 0.3);
+  box-shadow: inset 0 -2px 3px 3px var(--text-color);
 }
 
 .btn--raised {

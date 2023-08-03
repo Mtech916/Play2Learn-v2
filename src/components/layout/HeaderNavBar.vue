@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="bg--primary--color">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <img src="../../assets/logo.svg" alt="Play 2 learn logo" width="45" height="43" class="me-1" />

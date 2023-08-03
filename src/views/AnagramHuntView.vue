@@ -57,30 +57,3 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
     }
   }
 </script>
-
-<style scoped>
-
-/* #anagram-config {
-  width: 800px;
-}
-
-#anagram-game-play,
-#anagram-final-results {
-  font-size: 1.6em;
-  margin: auto;
-  width: 90%;
-}
-
-#game-heading {
-  font-size: 3rem;
-}
-
-.times-up {
-  font-size: 2.75rem;
-}
-
-.final-score {
-  font-size: 5rem;
-} */
-
-</style>

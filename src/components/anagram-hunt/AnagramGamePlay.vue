@@ -56,8 +56,6 @@ import anagrams from '@/data/anagrams.js';
     },
     methods: {
       startGame() {
-        // this.selectedAnagrams = anagrams[this.wordLength];
-
         this.selectedAnagrams = this.shuffleArray(this.selectedAnagrams);
 
         this.currentAnagrams = this.selectedAnagrams.shift();
