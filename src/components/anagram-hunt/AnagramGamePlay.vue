@@ -56,7 +56,7 @@ import anagrams from '@/data/anagrams.js';
     },
     methods: {
       startGame() {
-        this.selectedAnagrams = anagrams[this.wordLength];
+        // this.selectedAnagrams = anagrams[this.wordLength];
 
         this.selectedAnagrams = this.shuffleArray(this.selectedAnagrams);
 
@@ -103,10 +103,8 @@ import anagrams from '@/data/anagrams.js';
           this.$emit('update-score', this.score);
 
           this.currentAnagrams = this.currentAnagrams.filter(anagram => anagram !== lowerCaseInput);
-          console.log(this.currentAnagrams);
 
           this.guessedAnagrams.push(lowerCaseInput);
-          console.log(this.guessedAnagrams);
           this.userInput = '';
           if (this.currentAnagrams.length === 0) {
             this.fetchNewAnagrams();
@@ -115,7 +113,7 @@ import anagrams from '@/data/anagrams.js';
       },
     },
     beforeMount() {
-      this.selectedAnagrams = [];
+      this.selectedAnagrams = [...anagrams[this.wordLength]];
     },
     mounted() {
       this.startGame();

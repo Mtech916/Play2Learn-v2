@@ -27,6 +27,7 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
         gameStarted: false,
         gameOver: false,
         wordLength: null,
+        selectedAnagrams: [],
         score: 0,
       }
     },
@@ -43,6 +44,7 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
       },
       restartGame() {
         this.score = 0;
+        this.selectedAnagrams = [];
         this.gameStarted = true;
         this.gameOver = false;
       },
